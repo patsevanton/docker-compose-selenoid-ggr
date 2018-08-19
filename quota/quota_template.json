@@ -1,0 +1,18 @@
+{
+  "hosts": {
+  "group": {
+  "cluster": {
+    "selenoid": {
+      "port": 4446,
+      "count": 4
+    } } }
+  },
+  "quota": {
+    "selenoid": {
+      "chrome": {
+            "defaultVersion": "67.0",
+            "versions": {
+            "67.0": "group","68.0": "group"}
+         }    }
+  }
+}

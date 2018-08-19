@@ -1,0 +1,31 @@
+{
+    "chrome": {
+        "default": "68.0",
+        "versions": {
+            "66.0": {
+                "image": "selenoid/chrome:66.0",
+                "port": "4444",
+                "path": "/",
+                "tmpfs": {
+                    "/tmp": "size=128m"
+                }
+            },
+            "67.0": {
+                "image": "selenoid/chrome:67.0",
+                "port": "4444",
+                "path": "/",
+                "tmpfs": {
+                    "/tmp": "size=128m"
+                }
+            },
+            "68.0": {
+                "image": "selenoid/chrome:68.0",
+                "port": "4444",
+                "path": "/",
+                "tmpfs": {
+                    "/tmp": "size=128m"
+                }
+            }
+        }
+    }
+}
