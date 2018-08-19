@@ -6,10 +6,10 @@ services:
     links:
       - ggr-ui
     ports:
-      - "4444:4444"
+      - "4446:4446"
     volumes:
       - "./:/etc/grid-router:ro"
-    command: ["-quotaDir", "/etc/grid-router/quota"]
+    command: ["-quotaDir", "/etc/grid-router/quota", "-listen", ":4446"]
   ggr-ui:
     restart: always
     image: aerokube/ggr-ui
@@ -32,22 +32,22 @@ services:
       - "4445:4445"
     command: ["java", "-jar", "/selenium-server-standalone-2.44.0.jar", "-port", "4445"]
   selenoid:
-#    network_mode: bridge
+    network_mode: bridge
     image: aerokube/selenoid:latest-release
     volumes:
       - "./etc:/etc/selenoid"
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./video:/opt/selenoid/video"
     environment:
-      - OVERRIDE_VIDEO_OUTPUT_DIR=./video
+      - OVERRIDE_VIDEO_OUTPUT_DIR=$PWD/video
     command: ["-conf", "/etc/selenoid/browsers.json", "-video-output-dir", "/opt/selenoid/video"]
     ports:
-      - "4446:4444"
-    links:
-      - ggr
+      - "4444:4444"
   chrome67:
     image: selenoid/chrome:67.0
   chrome68:
     image: selenoid/chrome:68.0
   videorecorder:
     image: selenoid/video-recorder
+    logging:
+      driver: none

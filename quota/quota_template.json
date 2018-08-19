@@ -2,8 +2,8 @@
   "hosts": {
   "group": {
   "cluster": {
-    "selenoid": {
-      "port": 4446,
+    "ip-of-server": {
+      "port": 4444,
       "count": 4
     } } }
   },
