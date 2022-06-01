@@ -10,9 +10,9 @@
   "quota": {
     "selenoid": {
       "chrome": {
-            "defaultVersion": "67.0",
+            "defaultVersion": "101.0",
             "versions": {
-            "67.0": "group","68.0": "group"}
+            "100.0": "group","101.0": "group"}
          }    }
   }
 }

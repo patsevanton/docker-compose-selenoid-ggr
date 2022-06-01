@@ -44,10 +44,10 @@ services:
     ports:
       - "4444:4444"
   chrome67:
-    image: selenoid/chrome:67.0
+    image: selenoid/chrome:100.0
   chrome68:
-    image: selenoid/chrome:68.0
+    image: selenoid/chrome:101.0
   videorecorder:
-    image: selenoid/video-recorder
+    image: selenoid/video-recorder:latest-release
     logging:
       driver: none
